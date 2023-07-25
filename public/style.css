@@ -1,0 +1,8 @@
+.firstH1 {
+   color: blue;
+}
+
+.completed {
+   color: gray;
+   text-decoration: line-through;
+}

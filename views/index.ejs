@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://kit.fontawesome.com/bcaf4f0872.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="style.css">
+   <title>Document</title>
+</head>
+<body>
+   <h1 class="firstH1">Current Rappers</h1>
+
+   <ul class="Rappers">
+      <% for(let i = 0; i < rapperInfo.length; i++){%>
+         <li class="rap">
+            <% if(rapperInfo[i].completed === true) {%>
+               <span><%= rapperInfo[i].name %></span>:
+               <span><%= rapperInfo[i].food %></span>
+               <span class="like"><%= rapperInfo[i].likes %> <i class="fa-solid fa-thumbs-up"></i></span>
+               <span class="delete"><i class="fa-solid fa-trash"></i></span>
+            <% }else{%>
+               <span><%= rapperInfo[i].name %></span>:
+               <span><%= rapperInfo[i].food %></span>
+               <span class="like"><%= rapperInfo[i].likes %> <i class="fa-solid fa-thumbs-up"></i></span>
+               <span class="delete"><i class="fa-solid fa-trash"></i></span>
+            <% } %>
+         </li>
+       <%} %>
+   </ul>
+
+   <h2>Left to do: <%= left %></h2>
+
+   <h1>Add A Rapper</h1>
+   <form action="/addRapper" method="POST">
+      <input type="text" name="name" placeholder="Stage Name">
+      <input type="text" name="food" placeholder="Favourite Food">
+      <button>Submit</button>
+   </form>   
+
+   <script src="main.js"></script>
+</body>
+</html>
