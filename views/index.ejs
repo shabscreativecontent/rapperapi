@@ -14,16 +14,14 @@
       <% for(let i = 0; i < rapperInfo.length; i++){%>
          <li class="rap">
             <% if(rapperInfo[i].completed === true) {%>
+               <span class="completed"><%= rapperInfo[i].name %></span>:
+               <span class="completed"><%= rapperInfo[i].food %></span>
+            <% }else{ %>
                <span><%= rapperInfo[i].name %></span>:
                <span><%= rapperInfo[i].food %></span>
-               <span class="like"><%= rapperInfo[i].likes %> <i class="fa-solid fa-thumbs-up"></i></span>
-               <span class="delete"><i class="fa-solid fa-trash"></i></span>
-            <% }else{%>
-               <span><%= rapperInfo[i].name %></span>:
-               <span><%= rapperInfo[i].food %></span>
-               <span class="like"><%= rapperInfo[i].likes %> <i class="fa-solid fa-thumbs-up"></i></span>
-               <span class="delete"><i class="fa-solid fa-trash"></i></span>
             <% } %>
+            <span class="like"><%= rapperInfo[i].likes %> <i class="fa-solid fa-thumbs-up"></i></span>
+            <span class="delete"><i class="fa-solid fa-trash"></i></span>
          </li>
        <%} %>
    </ul>
